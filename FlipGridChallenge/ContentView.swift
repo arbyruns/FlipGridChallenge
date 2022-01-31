@@ -9,6 +9,7 @@ import SwiftUI
 
 struct ContentView: View {
     @StateObject var verifyFunctions = VerifyFunctions()
+
     @State var firstName = ""
     @State var emailAddress = ""
     @State var userPassword = ""
@@ -18,21 +19,7 @@ struct ContentView: View {
     var body: some View {
         VStack {
             HeaderView()
-            ZStack {
-                VStack(alignment: .leading) {
-                    Text("First Name")
-                        .fontWeight(.semibold)
-                    RoundedRectangle(cornerRadius: 13)
-                        .stroke(.secondary, style: StrokeStyle(lineWidth: 1))
-                        .frame(height: 55)
-                        .overlay(
-                            TextField("First Name", text: $firstName)
-                                .padding()
-                                .disableAutocorrection(true)
-                        )
-                }
-            }
-            .padding(.vertical, 6)
+            FirstNameView(firstName: $firstName)
             ZStack {
                 VStack(alignment: .leading) {
                     Text("Email Address")
@@ -146,5 +133,27 @@ struct ButtonView: View {
                         .foregroundColor(.white)
                 }
             )
+    }
+}
+
+struct FirstNameView: View {
+    @Binding var firstName: String
+
+    var body: some View {
+        ZStack {
+            VStack(alignment: .leading) {
+                Text("First Name")
+                    .fontWeight(.semibold)
+                RoundedRectangle(cornerRadius: 13)
+                    .stroke(.secondary, style: StrokeStyle(lineWidth: 1))
+                    .frame(height: 55)
+                    .overlay(
+                        TextField("First Name", text: $firstName)
+                            .padding()
+                            .disableAutocorrection(true)
+                    )
+            }
+        }
+        .padding(.vertical, 6)
     }
 }
