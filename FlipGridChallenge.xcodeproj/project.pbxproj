@@ -98,9 +98,9 @@
 		5448299727A8893300E19FD5 /* FlipGridChallenge */ = {
 			isa = PBXGroup;
 			children = (
+				544829C727A8AEF400E19FD5 /* Views */,
 				544829C427A894AC00E19FD5 /* Model */,
 				5448299827A8893300E19FD5 /* FlipGridChallengeApp.swift */,
-				5448299A27A8893300E19FD5 /* ContentView.swift */,
 				544829C227A88AA600E19FD5 /* TextFieldView.swift */,
 				5448299C27A8893600E19FD5 /* Assets.xcassets */,
 				5448299E27A8893600E19FD5 /* Preview Content */,
@@ -139,6 +139,14 @@
 				544829C527A894C200E19FD5 /* VerifyFunctions.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		544829C727A8AEF400E19FD5 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				5448299A27A8893300E19FD5 /* ContentView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
