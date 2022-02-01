@@ -18,6 +18,7 @@ struct HeaderView: View {
                     .bold()
                 Text(subText)
                     .foregroundColor(.secondary)
+                    .padding(.top, 1)
             }
             Spacer()
         }
@@ -157,7 +158,7 @@ struct EmailView: View {
 struct HelperViews_Previews: PreviewProvider {
     static var previews: some View {
         VStack {
-            HeaderView(text: "nil", subText: "nilnil")
+            HeaderView(text: "nil", subText: "Your super-awesome portfolio has been successfully submitted!  The details below will be public within your community!")
             FirstNameView(firstName: .constant("Bluth"))
             ButtonView(text: "OK", enabled: true)
         }
