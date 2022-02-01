@@ -64,6 +64,94 @@ struct FirstNameView: View {
     }
 }
 
+struct WebsiteView: View {
+    @Binding var website: String
+
+    var body: some View {
+        ZStack {
+            VStack(alignment: .leading) {
+                Text("Website")
+                    .fontWeight(.semibold)
+                RoundedRectangle(cornerRadius: 13)
+                    .stroke(.secondary, style: StrokeStyle(lineWidth: 1))
+                    .frame(height: 55)
+                    .overlay(
+                        TextField("Website", text: $website)
+                            .padding()
+                    )
+            }
+        }
+    }
+}
+
+struct PasswordView: View {
+
+    @Binding var isSecured: Bool
+    @Binding var userPassword: String
+
+    var body: some View {
+        VStack(alignment: .leading) {
+            Text("Password")
+                .fontWeight(.semibold)
+            ZStack(alignment: .trailing) {
+                RoundedRectangle(cornerRadius: 13)
+                    .stroke(.secondary, style: StrokeStyle(lineWidth: 1))
+                    .frame(height: 55)
+
+                if isSecured {
+                    SecureField("Password", text: $userPassword)
+                        .padding(.horizontal)
+                        .disableAutocorrection(true)
+                } else {
+                    TextField("Password", text: $userPassword)
+                        .padding(.horizontal)
+                        .disableAutocorrection(true)
+                }
+                Button(action: {
+                    isSecured.toggle()
+                })
+                {
+                    Image(systemName: isSecured ? "eye.slash" : "eye")
+                        .padding(.trailing)
+                }
+                .buttonStyle(PlainButtonStyle())
+            }
+            .padding(.vertical, 6)
+        }
+    }
+}
+
+struct EmailView: View {
+    @StateObject var verifyFunctions = VerifyFunctions()
+
+    @Binding var emailAddress: String
+
+    var body: some View {
+        ZStack {
+            VStack(alignment: .leading) {
+                Text("Email Address")
+                    .fontWeight(.semibold)
+                ZStack {
+                    RoundedRectangle(cornerRadius: 13)
+                        .stroke(.secondary, style: StrokeStyle(lineWidth: 1))
+                        .frame(height: 55)
+                    HStack {
+                        TextField("Email Address", text: $emailAddress)
+                            .padding()
+                            .disableAutocorrection(true)
+                        if verifyFunctions.validEmail(emailAddress) {
+                            Image(systemName: "checkmark.circle")
+                                .foregroundColor(.green)
+                                .padding(.trailing)
+                        }
+                    }
+                }
+            }
+        }
+        .padding(.vertical, 6)
+    }
+}
+
 
 struct HelperViews_Previews: PreviewProvider {
     static var previews: some View {

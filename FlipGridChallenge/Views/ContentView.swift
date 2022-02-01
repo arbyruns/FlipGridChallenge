@@ -8,97 +8,53 @@
 import SwiftUI
 
 struct ContentView: View {
+    @StateObject var userProperty: UserProperties
     @StateObject var verifyFunctions = VerifyFunctions()
 
-    @State var firstName = ""
-    @State var emailAddress = ""
-    @State var userPassword = ""
-    @State var website = ""
     @State var isSecured = true
+    @State var showConfirmation = false
 
     var body: some View {
         VStack {
             HeaderView(text: "Profile Creation", subText: "Use the form to submit your portfolio. \nAn email and password are required.")
-            FirstNameView(firstName: $firstName)
+            Spacer()
             ZStack {
-                VStack(alignment: .leading) {
-                    Text("Email Address")
-                        .fontWeight(.semibold)
-                    ZStack {
-                        RoundedRectangle(cornerRadius: 13)
-                            .stroke(.secondary, style: StrokeStyle(lineWidth: 1))
-                            .frame(height: 55)
-                        HStack {
-                            TextField("Email Address", text: $emailAddress)
-                                .padding()
-                                .disableAutocorrection(true)
-                            if verifyFunctions.validEmail(emailAddress) {
-                                Image(systemName: "checkmark.circle")
-                                    .foregroundColor(.green)
-                                    .padding(.trailing)
-                            }
+                Color("background")
+                    .clipShape(RoundedRectangle(cornerRadius: 13))
+                    .shadow(color: .black.opacity(0.3), radius: 13, x: 0, y: 0)
+                    .frame(height: 450)
+                    .overlay(
+                        VStack {
+                            FirstNameView(firstName: $userProperty.firstName)
+                            EmailView(emailAddress: $userProperty.emailAddress)
+                            PasswordView(isSecured: $isSecured, userPassword: $userProperty.userPassword)
+                            WebsiteView(website: $userProperty.website)
                         }
-                    }
-                }
-            }
-            .padding(.vertical, 6)
-            VStack(alignment: .leading) {
-                Text("Password")
-                    .fontWeight(.semibold)
-                ZStack(alignment: .trailing) {
-                    RoundedRectangle(cornerRadius: 13)
-                        .stroke(.secondary, style: StrokeStyle(lineWidth: 1))
-                        .frame(height: 55)
-
-                    if isSecured {
-                        SecureField("Password", text: $userPassword)
-                            .padding(.horizontal)
-                            .disableAutocorrection(true)
-                    } else {
-                        TextField("Password", text: $userPassword)
-                            .padding(.horizontal)
-                            .disableAutocorrection(true)
-                    }
-                    Button(action: {
-                        isSecured.toggle()
-                    })
-                    {
-                        Image(systemName: isSecured ? "eye.slash" : "eye")
-                            .padding(.trailing)
-                    }
-                    .buttonStyle(PlainButtonStyle())
-                }
-                .padding(.vertical, 6)
-            }
-            ZStack {
-                VStack(alignment: .leading) {
-                    Text("Website")
-                        .fontWeight(.semibold)
-                    RoundedRectangle(cornerRadius: 13)
-                        .stroke(.secondary, style: StrokeStyle(lineWidth: 1))
-                        .frame(height: 55)
-                        .overlay(
-                            TextField("Website", text: $website)
-                                .padding()
-                        )
-                }
+                            .padding()
+                    )
             }
             Spacer()
             Button(action: {
-
+                showConfirmation = true
                    })
             {
                 ButtonView(text: "Submit")
                     .cornerRadius(13)
             }
-            .disabled(!verifyFunctions.shouldEnableButton(firstName, emailAddress))
+            .disabled(!verifyFunctions.shouldEnableButton(userProperty.firstName, userProperty.emailAddress))
         }
         .padding()
+        .sheet(isPresented: $showConfirmation) {
+            ConfirmationPageView(userProperty: userProperty)
+        }
+        .background(Color("background"))
     }
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        ContentView(userProperty: UserProperties())
+        ContentView(userProperty: UserProperties())
+            .colorScheme(.dark)
     }
 }
