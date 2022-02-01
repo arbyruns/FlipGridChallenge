@@ -11,7 +11,7 @@ import SwiftUI
 struct FlipGridChallengeApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ContentView(userProperty: UserProperties())
         }
     }
 }
