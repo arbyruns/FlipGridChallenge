@@ -10,7 +10,7 @@
 2. For UI aesthetics I gave the textFields some depth
 3. Added a background for UI purposes.
 4. I gave the user the ability to toggle seeing the password to confirm they've input the correct password.  This could because of a invalid login or if the user has a long password.
- 5. I added email verification to ensure a valid email is present.  This allows the user to know right away they've inputted a valid email address.  Although, there still could be an issue on the backend (BE).
+5. I added email verification to ensure a valid email is present.  This allows the user to know right away they've inputted a valid email address.  Although, there still could be an issue on the backend (BE).
  */
 
 import SwiftUI

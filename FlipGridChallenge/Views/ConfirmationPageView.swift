@@ -4,6 +4,9 @@
 //
 //  Created by robevans on 1/31/22.
 //
+/*
+ Sign in button clears all fields and dismiss the confirmation sheet.
+ */
 
 import SwiftUI
 
