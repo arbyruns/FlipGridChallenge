@@ -4,6 +4,14 @@
 //
 //  Created by robevans on 1/31/22.
 //
+/*
+
+1. I opt'd to use field name above the textfield for UX purposes. Once a user begins to fill in a field it's easier to tell what field is which, because once a field is filled with text th textField title is no longer visible.
+2. For UI aesthetics I gave the textFields some depth
+3. Added a background for UI purposes.
+4. I gave the user the ability to toggle seeing the password to confirm they've input the correct password.  This could because of a invalid login or if the user has a long password.
+ 5. I added email verification to ensure a valid email is present.  This allows the user to know right away they've inputted a valid email address.  Although, there still could be an issue on the backend (BE).
+ */
 
 import SwiftUI
 
@@ -38,7 +46,7 @@ struct ContentView: View {
                 showConfirmation = true
                    })
             {
-                ButtonView(text: "Submit")
+                ButtonView(text: "Submit", enabled: verifyFunctions.shouldEnableButton(userProperty.firstName, userProperty.emailAddress))
                     .cornerRadius(13)
             }
             .disabled(!verifyFunctions.shouldEnableButton(userProperty.firstName, userProperty.emailAddress))

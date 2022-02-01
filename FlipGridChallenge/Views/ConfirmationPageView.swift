@@ -18,7 +18,7 @@ struct ConfirmationPageView: View {
             Text(userProperty.firstName)
             Text(userProperty.emailAddress)
             Spacer()
-            ButtonView(text: "Sign In")
+            ButtonView(text: "Sign In", enabled: true)
                 .padding()
         }
         .background(Color("background"))

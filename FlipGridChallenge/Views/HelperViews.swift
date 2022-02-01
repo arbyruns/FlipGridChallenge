@@ -28,10 +28,11 @@ struct HeaderView: View {
 struct ButtonView: View {
 
     let text: String
+    let enabled: Bool
 
     var body: some View {
         RoundedRectangle(cornerRadius: 8)
-            .fill(.red)
+            .fill(enabled ? .red : .secondary)
             .frame(height: 55, alignment: .center)
             .overlay(
                 VStack {
@@ -158,7 +159,7 @@ struct HelperViews_Previews: PreviewProvider {
         VStack {
             HeaderView(text: "nil", subText: "nilnil")
             FirstNameView(firstName: .constant("Bluth"))
-            ButtonView(text: "OK")
+            ButtonView(text: "OK", enabled: true)
         }
         .padding()
     }
