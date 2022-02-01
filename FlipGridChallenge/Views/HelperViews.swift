@@ -15,6 +15,7 @@ struct HeaderView: View {
             VStack(alignment: .leading) {
                 Text(text)
                     .font(.largeTitle)
+                    .kerning(2)
                     .bold()
                 Text(subText)
                     .foregroundColor(.secondary)
@@ -110,7 +111,9 @@ struct PasswordView: View {
                         .disableAutocorrection(true)
                 }
                 Button(action: {
-                    isSecured.toggle()
+                    withAnimation {
+                        isSecured.toggle()
+                    }
                 })
                 {
                     Image(systemName: isSecured ? "eye.slash" : "eye")
@@ -158,7 +161,7 @@ struct EmailView: View {
 struct HelperViews_Previews: PreviewProvider {
     static var previews: some View {
         VStack {
-            HeaderView(text: "nil", subText: "Your super-awesome portfolio has been successfully submitted!  The details below will be public within your community!")
+            HeaderView(text: "Profile Creation", subText: "Your super-awesome portfolio has been successfully submitted!  The details below will be public within your community!")
             FirstNameView(firstName: .constant("Bluth"))
             ButtonView(text: "OK", enabled: true)
         }
