@@ -18,7 +18,7 @@ struct ContentView: View {
 
     var body: some View {
         VStack {
-            HeaderView()
+            HeaderView(text: "Profile Creation", subText: "Use the form to submit your portfolio. \nAn email and password are required.")
             FirstNameView(firstName: $firstName)
             ZStack {
                 VStack(alignment: .leading) {
@@ -100,60 +100,5 @@ struct ContentView: View {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
-    }
-}
-
-struct HeaderView: View {
-    var body: some View {
-        HStack{
-            VStack(alignment: .leading) {
-                Text("Profile Creation")
-                    .font(.largeTitle)
-                    .bold()
-                Text("Use the form to submit your portfolio. \nAn email and password are required.")
-                    .foregroundColor(.secondary)
-            }
-            Spacer()
-        }
-    }
-}
-
-
-struct ButtonView: View {
-
-    let text: String
-
-    var body: some View {
-        RoundedRectangle(cornerRadius: 8)
-            .fill(.red)
-            .frame(height: 55, alignment: .center)
-            .overlay(
-                VStack {
-                    Text(text)
-                        .foregroundColor(.white)
-                }
-            )
-    }
-}
-
-struct FirstNameView: View {
-    @Binding var firstName: String
-
-    var body: some View {
-        ZStack {
-            VStack(alignment: .leading) {
-                Text("First Name")
-                    .fontWeight(.semibold)
-                RoundedRectangle(cornerRadius: 13)
-                    .stroke(.secondary, style: StrokeStyle(lineWidth: 1))
-                    .frame(height: 55)
-                    .overlay(
-                        TextField("First Name", text: $firstName)
-                            .padding()
-                            .disableAutocorrection(true)
-                    )
-            }
-        }
-        .padding(.vertical, 6)
     }
 }

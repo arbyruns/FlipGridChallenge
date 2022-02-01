@@ -16,6 +16,8 @@
 		544829B627A8893600E19FD5 /* FlipGridChallengeUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 544829B527A8893600E19FD5 /* FlipGridChallengeUITestsLaunchTests.swift */; };
 		544829C327A88AA600E19FD5 /* TextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 544829C227A88AA600E19FD5 /* TextFieldView.swift */; };
 		544829C627A894C200E19FD5 /* VerifyFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 544829C527A894C200E19FD5 /* VerifyFunctions.swift */; };
+		544829C927A8AF2200E19FD5 /* ConfirmationPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 544829C827A8AF2200E19FD5 /* ConfirmationPageView.swift */; };
+		544829CB27A8AFD600E19FD5 /* HelperViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 544829CA27A8AFD600E19FD5 /* HelperViews.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +50,8 @@
 		544829B527A8893600E19FD5 /* FlipGridChallengeUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlipGridChallengeUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		544829C227A88AA600E19FD5 /* TextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldView.swift; sourceTree = "<group>"; };
 		544829C527A894C200E19FD5 /* VerifyFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerifyFunctions.swift; sourceTree = "<group>"; };
+		544829C827A8AF2200E19FD5 /* ConfirmationPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmationPageView.swift; sourceTree = "<group>"; };
+		544829CA27A8AFD600E19FD5 /* HelperViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelperViews.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -145,6 +149,8 @@
 			isa = PBXGroup;
 			children = (
 				5448299A27A8893300E19FD5 /* ContentView.swift */,
+				544829C827A8AF2200E19FD5 /* ConfirmationPageView.swift */,
+				544829CA27A8AFD600E19FD5 /* HelperViews.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -279,7 +285,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				544829CB27A8AFD600E19FD5 /* HelperViews.swift in Sources */,
 				5448299B27A8893300E19FD5 /* ContentView.swift in Sources */,
+				544829C927A8AF2200E19FD5 /* ConfirmationPageView.swift in Sources */,
 				5448299927A8893300E19FD5 /* FlipGridChallengeApp.swift in Sources */,
 				544829C627A894C200E19FD5 /* VerifyFunctions.swift in Sources */,
 				544829C327A88AA600E19FD5 /* TextFieldView.swift in Sources */,
