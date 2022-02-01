@@ -8,18 +8,20 @@
 import Foundation
 
 class VerifyFunctions: ObservableObject {
-
+    
     func shouldEnableButton(_ name: String, _ email: String) -> Bool {
         var enableButton = false
-
-        if name.isEmpty && email.isEmpty {
-            enableButton = false
+        
+        if !name.isEmpty && !email.isEmpty {
+            if validEmail(email) {
+                enableButton = true
+            }
         } else {
-            enableButton = true
+            enableButton = false
         }
         return enableButton
     }
-
+    
     func validEmail(_ email: String) -> Bool {
         let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
 
