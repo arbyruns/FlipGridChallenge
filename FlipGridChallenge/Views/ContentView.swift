@@ -53,7 +53,7 @@ struct ContentView: View {
         }
         .padding()
         .sheet(isPresented: $showConfirmation) {
-            ConfirmationPageView(userProperty: userProperty)
+            ConfirmationPageView(userProperty: userProperty, showConfirmation: $showConfirmation)
         }
         .background(Color("background"))
     }

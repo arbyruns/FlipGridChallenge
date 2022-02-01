@@ -9,6 +9,7 @@ import SwiftUI
 
 struct ConfirmationPageView: View {
     @ObservedObject var userProperty = UserProperties()
+    @Binding var showConfirmation: Bool
 
     var body: some View {
         VStack {
@@ -18,7 +19,17 @@ struct ConfirmationPageView: View {
             confirmationRowView(image: "person.fill", name: userProperty.firstName)
             confirmationRowView(image: "envelope.fill", name: userProperty.emailAddress)
             Spacer()
-            ButtonView(text: "Sign In", enabled: true)
+            Button(action: {
+                userProperty.firstName = ""
+                userProperty.emailAddress = ""
+                userProperty.userPassword = ""
+                userProperty.website = ""
+                showConfirmation = false
+                   })
+            {
+                ButtonView(text: "Sign In", enabled: true)
+                    .cornerRadius(13)
+            }
                 .padding(.horizontal)
                 .padding(.vertical, 5)
         }
@@ -28,8 +39,8 @@ struct ConfirmationPageView: View {
 
 struct ConfirmationPageView_Previews: PreviewProvider {
     static var previews: some View {
-        ConfirmationPageView()
-        ConfirmationPageView()
+        ConfirmationPageView(showConfirmation: .constant(false))
+        ConfirmationPageView(showConfirmation: .constant(false))
             .colorScheme(.dark)
     }
 }
