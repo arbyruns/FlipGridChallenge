@@ -6,11 +6,14 @@
 //
 /*
 
-1. I opt'd to use field name above the textfield for UX purposes. Once a user begins to fill in a field it's easier to tell what field is which, because once a field is filled with text th textField title is no longer visible.
-2. For UI aesthetics I gave the textFields some depth
-3. Added a background for UI purposes.
-4. I gave the user the ability to toggle seeing the password to confirm they've input the correct password.  This could because of a invalid login or if the user has a long password.
-5. I added email verification to ensure a valid email is present.  This allows the user to know right away they've inputted a valid email address.  Although, there still could be an issue on the backend (BE).
+ 1. I opt'd to use field name above the textfield for UX purposes. Once a user begins to fill in a field it's easier to tell what field is which, because once a field is filled with text the textField title is no longer visible.
+ 2. For UI aesthetics I gave the textFields some depth
+ 3. Added a background for UI purposes.
+ 4. I gave the user the ability to toggle seeing the password to confirm they've input the correct password.  This could because of an invalid login or if the user has a long password.
+ 5. I added email verification to ensure a valid email is present. This allows the user to know right away they've inputted a valid email address.  Although, there still could be an issue on the backend (BE).
+ 6. Submit button is disabled until email and password conditions are met.
+ 7. I extracted as much as I could to subviews for easier code maintenance and allows for reusable views.  For example, HeaderView was created once, but used twice in the app.
+ 8. I opt'd for ObservableObject for the properties in the case we want to reuse properties in other views (Noted: Properties will be cleared when app is shutdown. For long term it would be better for coredata or AppStorage to maintain those properties).
  */
 
 import SwiftUI
