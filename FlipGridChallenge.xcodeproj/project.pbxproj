@@ -18,6 +18,7 @@
 		544829C627A894C200E19FD5 /* VerifyFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 544829C527A894C200E19FD5 /* VerifyFunctions.swift */; };
 		544829C927A8AF2200E19FD5 /* ConfirmationPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 544829C827A8AF2200E19FD5 /* ConfirmationPageView.swift */; };
 		544829CB27A8AFD600E19FD5 /* HelperViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 544829CA27A8AFD600E19FD5 /* HelperViews.swift */; };
+		544829CD27A8B14800E19FD5 /* UserProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 544829CC27A8B14800E19FD5 /* UserProperties.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +53,7 @@
 		544829C527A894C200E19FD5 /* VerifyFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerifyFunctions.swift; sourceTree = "<group>"; };
 		544829C827A8AF2200E19FD5 /* ConfirmationPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmationPageView.swift; sourceTree = "<group>"; };
 		544829CA27A8AFD600E19FD5 /* HelperViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelperViews.swift; sourceTree = "<group>"; };
+		544829CC27A8B14800E19FD5 /* UserProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProperties.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,7 +105,7 @@
 			isa = PBXGroup;
 			children = (
 				544829C727A8AEF400E19FD5 /* Views */,
-				544829C427A894AC00E19FD5 /* Model */,
+				544829C427A894AC00E19FD5 /* ViewModel */,
 				5448299827A8893300E19FD5 /* FlipGridChallengeApp.swift */,
 				544829C227A88AA600E19FD5 /* TextFieldView.swift */,
 				5448299C27A8893600E19FD5 /* Assets.xcassets */,
@@ -137,12 +139,13 @@
 			path = FlipGridChallengeUITests;
 			sourceTree = "<group>";
 		};
-		544829C427A894AC00E19FD5 /* Model */ = {
+		544829C427A894AC00E19FD5 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
 				544829C527A894C200E19FD5 /* VerifyFunctions.swift */,
+				544829CC27A8B14800E19FD5 /* UserProperties.swift */,
 			);
-			path = Model;
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		544829C727A8AEF400E19FD5 /* Views */ = {
@@ -285,6 +288,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				544829CD27A8B14800E19FD5 /* UserProperties.swift in Sources */,
 				544829CB27A8AFD600E19FD5 /* HelperViews.swift in Sources */,
 				5448299B27A8893300E19FD5 /* ContentView.swift in Sources */,
 				544829C927A8AF2200E19FD5 /* ConfirmationPageView.swift in Sources */,
