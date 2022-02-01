@@ -144,6 +144,7 @@ struct EmailView: View {
                         TextField("Email Address", text: $emailAddress)
                             .padding()
                             .disableAutocorrection(true)
+                            .keyboardType(.emailAddress)
                         if verifyFunctions.validEmail(emailAddress) {
                             Image(systemName: "checkmark.circle")
                                 .foregroundColor(.green)
