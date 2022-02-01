@@ -9,10 +9,10 @@ import Foundation
 
 class VerifyFunctions: ObservableObject {
     
-    func shouldEnableButton(_ name: String, _ email: String) -> Bool {
+    func shouldEnableButton(_ email: String, _ password: String) -> Bool {
         var enableButton = false
         
-        if !name.isEmpty && !email.isEmpty {
+        if !password.isEmpty && !email.isEmpty {
             if validEmail(email) {
                 enableButton = true
             }

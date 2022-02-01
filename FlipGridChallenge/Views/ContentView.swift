@@ -46,10 +46,10 @@ struct ContentView: View {
                 showConfirmation = true
                    })
             {
-                ButtonView(text: "Submit", enabled: verifyFunctions.shouldEnableButton(userProperty.firstName, userProperty.emailAddress))
+                ButtonView(text: "Submit", enabled: verifyFunctions.shouldEnableButton(userProperty.emailAddress, userProperty.userPassword))
                     .cornerRadius(13)
             }
-            .disabled(!verifyFunctions.shouldEnableButton(userProperty.firstName, userProperty.emailAddress))
+            .disabled(!verifyFunctions.shouldEnableButton(userProperty.emailAddress, userProperty.userPassword))
         }
         .padding()
         .sheet(isPresented: $showConfirmation) {
